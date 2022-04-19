@@ -13,7 +13,7 @@
 #define CATCH_SERVO_R_OPEN 0 // Open position, ready to catch a ball, right servo. Bigger number - more tightly closed.
 
 // LIFT_SERVO lifts catch the mechanism.
-#define LIFT_SERVO_DOWN 135 // Lowest position, catching a ball. Increase number to lift higher.
+#define LIFT_SERVO_DOWN 125 // Lowest position, catching a ball. Increase number to lift higher.
 #define LIFT_SERVO_UP 230 // Top (idle) position. Increase number to lift higher.
 
 #define GRIPPER_SWITCH 27 // Gripper's switch for ball detection
