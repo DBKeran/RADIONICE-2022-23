@@ -120,6 +120,11 @@ void RobotLine::catchBall() {
 
   go(70, 70);             // Prelazak raskrižja
   delayMs(500);
+
+  stop();
+  delayMs(20);
+  armCarry();
+  delayMs(20);
 }
 
 

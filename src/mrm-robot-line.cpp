@@ -107,11 +107,19 @@ void RobotLine::armCatch() {
 	mrm_servo->write(70, 2); // 
 }
 
+void RobotLine::armCarry() {
+	mrm_servo->write(160, 0); // 120 - 230 
+	mrm_servo->write(30, 1); 
+	mrm_servo->write(70, 2); 
+}
+
 void RobotLine::armOpen() {
 	servo(140, 0);      // Range from 130 - 160
 	servo(80, 1);       // Range from 0 - 90
 	servo(10, 2);       // Range from 90 - 0}
 }
+
+
 
 /** Arm will go to ball-catch ready position.
 */

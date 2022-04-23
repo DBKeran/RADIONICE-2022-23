@@ -118,6 +118,8 @@ public:
 	*/
 	void armCatchReady();
 
+	void armCarry();
+
 	/** Arm will drop the ball.
 	*/
 	void armDrop();
