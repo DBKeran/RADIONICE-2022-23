@@ -108,7 +108,7 @@ void RobotLine::armCatch() {
 }
 
 void RobotLine::armCarry() {
-	mrm_servo->write(160, 0); // 120 - 230 
+	mrm_servo->write(135, 0); // 120 - 230 
 	mrm_servo->write(30, 1); 
 	mrm_servo->write(70, 2); 
 }
@@ -1156,7 +1156,8 @@ uint8_t RobotLine::saturation(uint8_t deviceNumber) {
 @param servoNumber - Servo's ordinal number. Each call of function add() assigns a increasing number to the servo, starting with 0.
 */
 void RobotLine::servo(uint16_t degrees, uint8_t servoNumber){
-	switch (servoNumber)
+	mrm_servo->write(degrees, servoNumber);
+	/*switch (servoNumber)
 	{
 	case 0:
 		if (degrees <= 130){
@@ -1192,7 +1193,7 @@ void RobotLine::servo(uint16_t degrees, uint8_t servoNumber){
 		}
 		break;
 
-	}
+	}*/
 }
 
 /** Display fixed sign stored in sensor

@@ -50,8 +50,8 @@ void RobotLine::radionica() {
     }
     else {
       // Praćenje zida dok drži loptu u gripperu
-      wallFollowLeftCarry();
       wallFollowRightCarry();
+      wallFollowLeftCarry();
     }
   }
 }
@@ -145,8 +145,6 @@ void RobotLine::wallFollowRightCarry() {
     else
       go(70, 30);
   }
-  else
-    go(60, 60);
 }
 
 void RobotLine::wallFollowLeftCarry() {
@@ -163,6 +161,6 @@ void RobotLine::wallFollowLeftCarry() {
     else
       go(30, 70);
   }
-  else
-    go(60, 60);
+  else 
+    go(30, 70);
 }
