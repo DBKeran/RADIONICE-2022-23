@@ -108,7 +108,7 @@ void RobotLine::armCatch() {
 }
 
 void RobotLine::armCarry() {
-	mrm_servo->write(135, 0); // 120 - 230 
+	mrm_servo->write(140, 0); // 120 - 230 
 	mrm_servo->write(30, 1); 
 	mrm_servo->write(70, 2); 
 }
