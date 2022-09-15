@@ -17,11 +17,11 @@ void RobotLine::radionica() {
  else{
  // napravite if s kojim robot prati lijevi zid HINT: leftFront() > xxx
    
-   // Početak naredbe za pračenje desnog zida
+   // Početak naredbe za pračenje lijevog zida
    if (leftFront() > 100)
      go(20, 80);
    else
      go(80, 20);
-   // Završetak naredbe za pračenje desnog zida   
+   // Završetak naredbe za pračenje lijevog zida   
  }
 }
