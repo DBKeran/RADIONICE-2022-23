@@ -115,8 +115,8 @@ void RobotLine::armCarry() {
 
 void RobotLine::armOpen() {
 	servo(140, 0);      // Range from 130 - 160
-	servo(80, 1);       // Range from 0 - 90
-	servo(10, 2);       // Range from 90 - 0}
+	servo(70, 1);       // Range from 0 - 90
+	servo(20, 2);       // Range from 90 - 0}
 }
 
 
