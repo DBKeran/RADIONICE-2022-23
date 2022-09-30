@@ -18,7 +18,7 @@ void RobotLine::radionica() {
    go(80, 20);
  else
    go(20, 80);
- }
+
 // PRETVORBA VARIJABLE BROJAČA U TEKST
  sprintf(simbol,"%d", broj);
 // PRIKAZ PRETVORENE VARIJABLE SPREMNE ZA BROJAČ
