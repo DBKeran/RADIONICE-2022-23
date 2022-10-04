@@ -914,8 +914,14 @@ void RobotLine::loop() {
 
 /** Generic actions, use them as templates
 */
-void RobotLine::loop0() { armClose(); end();}
-void RobotLine::loop1() { armCatchReady(); end(); }
+void RobotLine::loop0() { 
+	go(20, 70);
+	end();
+	}
+void RobotLine::loop1() {
+	go(70, 20);
+	end();
+	}
 void RobotLine::loop2() { armCatch(); end(); }
 void RobotLine::loop3() { armUp(); end(); }
 void RobotLine::loop4() { armDrop(); end(); }
