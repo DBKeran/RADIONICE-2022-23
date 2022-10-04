@@ -6,18 +6,20 @@ void RobotLine::radionica() {
   display("SIMBA");
 
 // ZADATAK: Neka robot opiše četverokut. 
-  go(60, 60);
+  go(90, 90);
   delayMs(2000);
-  go(-60, 60);
-  delayMs(600);
-  go(60, 60);
+  go(-90, 90);
+  delayMs(500);
+  go(90, 90);
   delayMs(2000);
-  go(-60, 60);
-  delayMs(600);
-  go(60, 60);
+  go(-90, 90);
+  delayMs(500);
+  go(90, 90);
   delayMs(2000);
-  go(-60, 60);
-  delayMs(600);  
-  go(60, 60);
+  go(-90, 90);
+  delayMs(500);  
+  go(90, 90);
   delayMs(2000);
+  stop();
+  end();
 }

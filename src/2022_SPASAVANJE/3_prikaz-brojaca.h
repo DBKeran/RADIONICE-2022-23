@@ -10,8 +10,8 @@ void RobotLine::radionica() {
 
 // ZADATAK: skretanje s povećanjem brojača
  if (front() < 120){
-   go(-50, 50);
-   delayMs(600);
+   go(-90, 90);
+   delayMs(500);
    broj++;
  }
  if (rightFront() > 120)
