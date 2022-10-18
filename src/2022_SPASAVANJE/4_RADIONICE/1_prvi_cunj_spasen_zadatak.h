@@ -11,10 +11,20 @@ void RobotLine::radionica() {
     delayMs(500);
     broj++;
   }
-  if (rightFront() > 120)
-    go(80, 20);
-  else
-    go(20, 80);
+// ZADATAK: Dodajte praćenje lijevog zida uz postojeće pračenje desnog zida. 
+// HINT: Koristite grananje if uvjeta
+  if (rightFront() < leftFront()){
+    if (rightFront() > 120)
+      go(80, 20);
+    else
+      go(20, 80);
+  }
+  else{
+    if (leftFront() > 120)
+      go(20, 80);
+    else
+      go(80, 20);
+  }
 
   
 // Ne mjenjati, služi za pretvorbu vrste varijable i ispis na 8x8 led   
