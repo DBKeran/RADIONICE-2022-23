@@ -6,9 +6,27 @@ void RobotLine::radionica() {
 
 // ZADATAK: Koristeći brojač varijablu iz prethodne radionice i senzore udaljenosti,
 //          spasite prvi čunj u zadanoj areni. 
-  
+  if (broj == 3 and frontLeft() > 500 and front() > 500){
+    go(-90, 90);
+    delayMs(500);
+    go(90, 90);
+    delayMs(1000);
+    go(-90, 90);
+    delayMs(500);
+    go(30, 30);
+    delayMs(2000);
+    stop();
+    delayMs(3000);
+    go(-90, 90);
+    delayMs(1000);
+    go(90, 90);
+    delayMs(1000);
+    go(90, -90);
+    delayMs(500);
+    broj++;
+  }
 // ZADATAK: Primjetite čunj s prednjim senzorom udaljenosti i brojačem.
-  if (front() < 120 and broj == 2){
+  else if (front() < 120 and broj == 2){
     go(20, 20);
     delayMs(500);
     go(-40, -40); 
@@ -17,7 +35,7 @@ void RobotLine::radionica() {
     delayMs(500);
     broj++;
   }
-  else if (front() < 120 and broj != 2){
+  else if (front() < 120){
     go(-90, 90);
     delayMs(500);
     broj++;
