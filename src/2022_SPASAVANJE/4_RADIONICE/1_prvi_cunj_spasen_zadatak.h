@@ -1,61 +1,71 @@
 #pragma once
 #include "helper.h"
 void RobotLine::radionica() {
+  if (setup()) {
+    armOpen();
+  }
   static int broj = 0;
   char simbol[10 + sizeof(char)];
 
-// ZADATAK: Koristeći brojač varijablu iz prethodne radionice i senzore udaljenosti,
-//          spasite prvi čunj u zadanoj areni. 
-  if (broj == 3 and frontLeft() > 500 and front() > 500){
-    go(-90, 90);
-    delayMs(500);
-    go(90, 90);
+  // ZADATAK: Koristeći brojač varijablu iz prethodne radionice i senzore udaljenosti,
+  //          spasite prvi čunj u zadanoj areni.
+  if (broj == 3 and frontLeft() > 500 and front() > 500) {
+    go(40, 40);
     delayMs(1000);
     go(-90, 90);
-    delayMs(500);
+    delayMs(520);
+    go(40, 40);
+    delayMs(2000);
+    go(-90, 90);
+    delayMs(520);
     go(30, 30);
     delayMs(2000);
     stop();
-    delayMs(3000);
-    go(-90, 90);
-    delayMs(1000);
-    go(90, 90);
-    delayMs(1000);
-    go(90, -90);
-    delayMs(500);
-    broj++;
+    end();
+    delayMs(5000);
   }
-// ZADATAK: Primjetite čunj s prednjim senzorom udaljenosti i brojačem.
-  else if (front() < 120 and broj == 2){
+  else if (leftFront() < 120 and broj == 3) {
+    if (leftFront() > 100)
+      go(20, 80);
+    else
+      go(80, 20);
+  }
+
+  // ZADATAK: Primjetite čunj s prednjim senzorom udaljenosti i brojačem.
+  else if (front() < 120 and broj == 2) {
     go(20, 20);
-    delayMs(500);
-    go(-40, -40); 
     delayMs(1000);
+    go(-40, -40);
+    delayMs(800);
     go(90, -90);
     delayMs(500);
     broj++;
   }
-  else if (front() < 120){
-    go(-90, 90);
+  else if (front() < 120 and broj < 3) {
+    go(90, -90);
     delayMs(500);
     broj++;
   }
-// ZADATAK: Dodajte praćenje lijevog zida uz postojeće pračenje desnog zida. 
-// HINT: Koristite grananje if uvjeta
-  else if (rightFront() < leftFront()){
-    if (rightFront() > 120)
-      go(80, 20);
-    else
-      go(20, 80);
+  // ZADATAK: Dodajte praćenje lijevog zida uz postojeće pračenje desnog zida.
+  // HINT: Koristite grananje if uvjeta
+  else if (rightFront() < leftFront() and broj < 3) {
+    if (rightFront() < 120) {
+      if (rightFront() > 100)
+        go(80, 20);
+      else
+        go(20, 80);
+    }
   }
-  else{
-    if (leftFront() > 120)
+  else if (leftFront() < 120 and broj < 3) {
+    if (leftFront() > 100)
       go(20, 80);
     else
       go(80, 20);
   }
-  
-// Ne mjenjati, služi za pretvorbu vrste varijable i ispis na 8x8 led   
-  sprintf(simbol,"%d", broj);
+  else
+    go(50, 50);
+
+  // Ne mjenjati, služi za pretvorbu vrste varijable i ispis na 8x8 led
+  sprintf(simbol, "%d", broj);
   display(simbol);
 }
