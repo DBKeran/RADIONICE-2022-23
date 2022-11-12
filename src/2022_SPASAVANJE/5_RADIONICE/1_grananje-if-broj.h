@@ -1,7 +1,7 @@
 #pragma once
 #include "helper.h"
 void RobotLine::radionica() {
-  if(setup()){
+  if (setup()) {
     armOpen();
   }
   // ZADATAK: uvedite varijablu brojača.
@@ -11,13 +11,23 @@ void RobotLine::radionica() {
   // VARIJABLA ZA PRETVORBU BROJA U TEKST
   char simbol[10 + sizeof(char)];
 
-  if (lineAny()) {
+  if (line(0) and line(8)) {
+    go(50, 50);
+    delayMs(300);
+    broj++;
+  }
+  else if (lineAny()) {
     lineFollow();
   }
   else {
     // ZADATAK: skretanje s povećanjem brojača
+    if (broj == 1 and rightFront()<150) {
+      stop();
+      end();
+      delayMs(10000);
+    }
     if (front() < 120) {
-      go(90, -90);
+      go(-90, 90);
       delayMs(500);
       broj++;
     }
@@ -40,6 +50,7 @@ void RobotLine::radionica() {
     else
       go(50, 50);
   }
+
   // Ne mjenjati, služi za pretvorbu vrste varijable i ispis na 8x8 led
   sprintf(simbol, "%d", broj);
   display(simbol);
